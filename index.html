@@ -1257,7 +1257,25 @@
       .plato-acciones { width:100%; flex-direction:row; justify-content:space-between; }
     }
 
-  </style>
+  
+/* Identidad final: amarillo dorado, blanco y glass */
+:root { --principal:#e9aa08; --principal-claro:#f9bd26; --rojo:#c51f25; }
+header { position:sticky; top:0; background:rgba(8,8,8,.35); backdrop-filter:blur(18px) saturate(140%); -webkit-backdrop-filter:blur(18px) saturate(140%); border:0; box-shadow:none; }
+header .logo .logo-original, footer .logo .logo-original { width:clamp(145px,29vw,230px); height:auto; object-fit:contain; background:none; border:0; box-shadow:none; }
+.hero h1 { font-family:"Barlow Condensed",Impact,sans-serif; font-weight:900; color:#fff; }
+.hero h1 span { color:var(--principal); }
+.hero-botones .boton, .hero-botones .boton:hover { --superficie-boton:#131313; color:#fff; border:2px solid transparent; background:linear-gradient(#131313,#131313) padding-box,conic-gradient(from var(--angulo-borde),#75500a 0deg,#75500a 210deg,#e9aa08 265deg,#fff0aa 300deg,#e9aa08 330deg,#75500a 360deg) border-box; animation:recorrido-amarillo 3s linear infinite; }
+.hero-botones .boton:hover { color:var(--principal-claro); }
+.hero-botones .icono-cta { display:block; }
+.menu-cabecera h2,.sabores-grupos h3,.plato-texto h3,.titulo-seccion { color:var(--principal); }
+.menu-cabecera h2::after,.carrito-insignia { background:var(--principal); }
+.carrito-insignia { color:#111; }
+.sabores-grupos h3,.barra-carrito-movil { border-color:var(--principal); }
+.elegir-plato,.boton-finalizar,.sumar-plato,.ver-carrito-movil { color:#fff; --superficie-boton:#151515; }
+.plato-item.seleccionado .elegir-plato,.elegir-plato:hover,.boton-finalizar:hover,.sumar-plato:hover { color:#111; --superficie-boton:var(--principal); }
+@media(max-width:720px) { header {position:sticky;top:0;} .nav {min-height:72px;} header .logo .logo-original {width:clamp(130px,40vw,185px);} }
+@media(prefers-reduced-motion:reduce) { .hero-botones .boton {animation:none;} }
+</style>
 </head>
 
 
@@ -1273,7 +1291,7 @@
 
       <!-- CAMBIAR NOMBRE DEL CLIENTE -->
 
-      <a href="#inicio" class="logo" aria-label="Pizza Metro, inicio"><span class="marca-pizza">Pizza <b>Metro</b><small>EXPRESS <i>y algo más…</i></small></span></a>
+      <a href="#inicio" class="logo" aria-label="Pizza Metro, inicio"><img class="logo-original" src="./imagenes/logo-pizza-metro.png" alt="Pizza Metro Express y algo más"></a>
 
 
       <nav class="nav-links" id="navLinks"><a href="#menu">Menú</a><a href="#ubicacion">Contacto</a></nav>
@@ -1466,7 +1484,7 @@
 
   <footer>
     <div class="contenedor">
-      <a href="#inicio" class="logo" aria-label="Pizza Metro, inicio"><span class="marca-pizza">Pizza <b>Metro</b><small>EXPRESS <i>y algo más…</i></small></span></a>
+      <a href="#inicio" class="logo" aria-label="Pizza Metro, inicio"><img class="logo-original" src="./imagenes/logo-pizza-metro.png" alt="Pizza Metro Express y algo más"></a>
       <div class="copyright">© 2026 Pizza Metro</div>
     </div>
   </footer>
